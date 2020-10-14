@@ -45,6 +45,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="index.js"></script>
+  <script src="indexedDB.js"></script>
 
   <!-- Registering the Service Worker  AG-->
   <script>
@@ -52,8 +53,7 @@
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("service-worker.js")
           .then(reg => {
-            console.log("Service Worker registered successfully!", reg)
-          // .catch(error => console.log("Service Worker registration failed:", error)); 
+            console.log("Service Worker registered successfully!", reg);   
           });
       });
     }

@@ -22,7 +22,7 @@ self.addEventListener("install", function(evt) {
     self.skipWaiting();
   });
 
-  // activate
+  // activate service worker and remove the old data from the cache
   self.addEventListener("activate", function(evt) {
     evt.waitUntil(
       caches.keys().then(keyList => {
@@ -40,10 +40,12 @@ self.addEventListener("install", function(evt) {
     self.clients.claim();
   });
   
-  // fetch
+  // fetch: enable service-worker to intercept network requests
   self.addEventListener("fetch", function(evt) {
     if (evt.request.url.includes("/api/")) { // api returns json, based on request in public/index.js
-      evt.respondWith(
+      //console.log('[Service Worker Fetch (data)', evt.request.url);
+
+        evt.respondWith(
         caches.open(DATA_CACHE_NAME).then(cache => {
           return fetch(evt.request)
             .then(response => {
@@ -61,7 +63,7 @@ self.addEventListener("install", function(evt) {
         }).catch(err => console.log(err))
       );
     } else {
-      //respond with static cache
+      //respond with static cache:the code allows the page to be accessible offline.
     evt.respondWith(
       caches.open(CACHE_NAME).then(cache => {
         return cache.match(evt.request).then(response => {
