@@ -78,7 +78,7 @@ module.exports = Transaction;
 
 ## Screen Shots
 
-User is presented with the details of his last workout, and is able to add a new exercise or create a new workout
+The main screen of the application shows the list of all the transactions incuding offline.
 ![image-1](public/assets/images/image-1.png)
 
 While offline, user entered transaction called "Birthday Present" and added \$100.00
@@ -93,7 +93,7 @@ Once user switched to online mode and refreshed, the "Birthday Present" for \$10
 ## Development
 
 I created three new files: server.js, public/manifest.webmanifest, public/service-worker.js, public/indexedDB.js. Updated server.js and public/index.html to implement the changes I made to allow the application to work offline.
-As soon the local environment was working and there no further errors, I pushed to heroku and ensured, I was able to use it and it was fully functional.
+As soon the local environment was working and there no further errors, I deployed the app to heroku and ensured that I was able to enter offline transactions and the transactions were stored and properly displayed when I switched back to online mode.
 
 ## Installation
 
@@ -132,35 +132,3 @@ https://budget-tracker-alina.herokuapp.com/
 ## Developer
 
     Alina Gorelik
-
-Add functionality to our existing Budget Tracker application to allow for offline access and functionality.
-
-The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
-
-Offline Functionality:
-
-- Enter deposits offline
-
-- Enter expenses offline
-
-When brought back online:
-
-- Offline entries should be added to tracker.
-
-## User Story
-
-AS AN avid traveller
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
-
-## Business Context
-
-Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.
-
-## Acceptance Criteria
-
-GIVEN a user is on Budget App without an internet connection
-WHEN the user inputs a withdrawal or deposit
-THEN that will be shown on the page, and added to their transaction history when their connection is back online.
-
----
