@@ -6,7 +6,7 @@ agorelik2
 
 ## Title:
 
-Budget Tracker
+### Budget Tracker
 
 [Link to the deployed application](https://budget-tracker-alina.herokuapp.com/)
 
@@ -38,15 +38,13 @@ so that my account balance is accurate when I am traveling.
 
 Added functionality to an existing Budget Tracker application to allow for offline access and functionality.
 
-- Offline Functionality:
+Offline Functionality:
 
 - Enter deposits offline
 
 - Enter expenses offline
 
-When brought back online:
-
-- Offline entries should be added to tracker.
+- When brought back online, offline entries should be added to tracker.
 
 ## Database
 
@@ -92,7 +90,7 @@ Once user switched to online mode and refreshed, the "Birthday Present" for \$10
 
 ## Development
 
-I created three new files: server.js, public/manifest.webmanifest, public/service-worker.js, public/indexedDB.js. Updated server.js and public/index.html to implement the changes I made to allow the application to work offline.
+I created three new files: public/manifest.webmanifest, public/service-worker.js, public/indexedDB.js. Updated server.js and public/index.html to implement the changes I made to allow the application to work offline.
 As soon the local environment was working and there no further errors, I deployed the app to heroku and ensured that I was able to enter offline transactions and the transactions were stored and properly displayed when I switched back to online mode.
 
 ## Installation
